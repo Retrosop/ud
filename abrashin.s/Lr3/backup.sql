@@ -7,3 +7,11 @@ COMMENT 'Hello world'
 BEGIN
 	SELECT 'Hello, World!' AS Message;
 END
+
+DELIMITER //
+CREATE FUNCTION abrashin_HW2()
+RETURNS VARCHAR(20)
+BEGIN
+	RETURN 'hello world';
+END
+//
