@@ -34,3 +34,14 @@ END
 //
 
 CALL glagolev_Hello_World_1_4();
+
+DELIMITER //
+CREATE PROCEDURE glagolev_Heavy()
+BEGIN
+  DECLARE S VARCHAR(20);
+  SELECT weight INTO S FROM Parts ORDER BY Weight DESC LIMIT 1;
+  SELECT(S);
+END
+//
+
+CALL glagolev_Heavy();
