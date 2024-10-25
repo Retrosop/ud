@@ -23,3 +23,14 @@ END
 //
 
 SELECT glagolev_Hello_World2();
+
+DELIMITER //
+CREATE PROCEDURE glagolev_Hello_World_1_4()
+BEGIN
+  DECLARE S VARCHAR(20);
+  SET S='Hello, world!';
+  SELECT(S);
+END
+//
+
+CALL glagolev_Hello_World_1_4();
