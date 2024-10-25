@@ -45,3 +45,14 @@ END
 //
 
 CALL glagolev_Heavy();
+
+DELIMITER //
+CREATE PROCEDURE glagolev_Parts_count()
+BEGIN
+  DECLARE S VARCHAR(20);
+  SELECT count(*) INTO S FROM Parts;
+  SELECT(S);
+END
+//
+
+CALL glagolev_Parts_count();
