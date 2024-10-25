@@ -1,0 +1,21 @@
+PROCEDURE `abrashin_HelloWorld`()
+BEGIN
+   SELECT 'Hello World';
+END
+
+DELIMITER //
+CREATE FUNCTION abrashin_Hello_World_1_3()
+RETURNS VARCHAR(20)
+BEGIN
+  RETURN 'HELLO WORLD';
+END
+//
+
+DELIMITER //
+CREATE PROCEDURE abrashin_Hello_World_1_4()
+BEGIN
+  DECLARE S VARCHAR(20);
+  SET S='HELLO WORLD';
+  SELECT(S);
+END
+//
