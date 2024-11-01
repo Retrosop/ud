@@ -62,3 +62,13 @@ END //
 DELIMITER ;
 
 CALL abrahin_GetEmployeesWithSalaryAbove(51000);
+
+DELIMITER //
+CREATE PROCEDURE abrahins_count(IN Input VARCHAR(20),OUT PNum INT)
+BEGIN
+  SELECT count(*) INTO PNum FROM LR3 WHERE ProductName=Input ;
+END
+//
+
+CALL abrahins_count('Laptop HB', @s);
+SELECT @s;
