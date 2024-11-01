@@ -47,3 +47,18 @@ END
 //
 
 CALL abrashin_Parts_count();
+
+DELIMITER //
+
+CREATE PROCEDURE abrahin_GetEmployeesWithSalaryAbove (
+    IN minSalary DECIMAL(10, 2)
+)
+BEGIN
+    SELECT EmployeeID, EmployeeName, Salary
+    FROM Employees
+    WHERE Salary > minSalary;
+END //
+
+DELIMITER ;
+
+CALL abrahin_GetEmployeesWithSalaryAbove(51000);
