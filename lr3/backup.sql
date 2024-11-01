@@ -55,4 +55,16 @@ BEGIN
 END
 //
 
+
 CALL glagolev_Parts_count();
+
+DELIMITER //
+CREATE PROCEDURE glagolev_Parts_count_1(IN Mat VARCHAR(20),OUT PNum INT)
+BEGIN
+  SELECT count(*) INTO PNum FROM Parts WHERE Material=Mat ;
+END
+//
+
+SET @s=0;
+CALL glagolev_Parts_count_1('Сталь',@s);
+SELECT @s;
