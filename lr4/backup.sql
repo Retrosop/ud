@@ -1,0 +1,7 @@
+DELIMITER //
+CREATE PROCEDURE glagolev_h()
+BEGIN
+DECLARE CONTINUE HANDLER FOR SQLSTATE '42S02' SELECT ('Таблица не существует!');
+SELECT * FROM No_such_table;
+END;
+//
