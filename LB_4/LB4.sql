@@ -26,4 +26,13 @@ END //
 
 DELIMITER ;
 
-CALL get_products(); -- Если таблица пуста, выбросит исключение
+DELIMITER //
+
+CREATE DEFINER=`bh35910_student1711`@`%` TRIGGER `Parts_after_insert`
+AFTER INSERT ON `Parts`
+FOR EACH ROW 
+BEGIN
+    UPDATE Projects
+    SET TotalCost = TotalCost + NEW.Cost
+    WHERE ProjectID = NEW.ProjectID;
+END; //
